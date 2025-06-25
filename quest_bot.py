@@ -5,7 +5,7 @@ import os
 logging.basicConfig(level=logging.INFO)
 
 # Указываем токен напрямую (или используй os.getenv, если хочешь из переменной окружения)
-BOT_TOKEN = "ТВОЙ_ТОКЕН_ЗДЕСЬ"  # <-- сюда вставь свой токен
+BOT_TOKEN = "7612341931:AAGmwYNJtrdgB9BBEQY13miUCW-888lbTe4"  # <-- сюда вставь свой токен
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
