@@ -4,7 +4,7 @@ import os
 
 logging.basicConfig(level=logging.INFO)
 
-API_TOKEN = os.getenv('BOT_TOKEN')
+API_TOKEN = os.getenv('7612341931:AAGmwYNJtrdgB9BBEQY13miUCW-888lbTe4')
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
