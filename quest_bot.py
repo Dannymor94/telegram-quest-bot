@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Получаем токен из переменной окружения
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-print("BOT_TOKEN:", BOT_TOKEN)  # Это можно удалить после теста
+print("BOT_TOKEN:", BOT_TOKEN)  # Для отладки, можно удалить
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
@@ -48,7 +48,16 @@ async def handle_answer(message: types.Message):
             await message.answer("✅ Верно! Следующая загадка:")
             await message.answer(QUESTS[progress]['question'])
         else:
-            await message.answer("🏁 Квест завершён! Подарок ждёт тебя на книжной полке 📚")
+            await message.answer("🏁 Квест завершён! Подарок ждёт тебя на книжной полке 📚\nА пока — песня в подарок 🎶")
+            try:
+                with open("Plamenev_feat._Aleksandr_Hananin_Ira_Demidova_-_Oslepitelno_molodoj.mp3", "rb") as audio:
+                    await message.answer_audio(
+                        audio,
+                        title="Ослепительно молодой",
+                        performer="Пламенев, Хананин, Демидова"
+                    )
+            except Exception as e:
+                await message.answer(f"⚠️ Не удалось отправить аудио: {e}")
     else:
         await message.answer("❌ Хм... не совсем. Попробуй ещё раз!")
 
