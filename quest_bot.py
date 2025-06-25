@@ -5,9 +5,9 @@ import os
 logging.basicConfig(level=logging.INFO)
 
 # Получаем токен из переменной окружения
-API_TOKEN = os.getenv("7612341931:AAGmwYNJtrdgB9BBEQY13miUCW-888lbTe4")
+BOT_TOKEN = os.getenv("7612341931:AAGmwYNJtrdgB9BBEQY13miUCW-888lbTe4")
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 # Список загадок и ответов
